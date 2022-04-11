@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('Test',function (){
-    return "hello world";
+Route::get('clients',function (){
+    $clients = \App\Models\Client::all();
+    return response()->json($clients);
 });
